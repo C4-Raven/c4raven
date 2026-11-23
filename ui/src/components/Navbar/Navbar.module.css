@@ -1,0 +1,91 @@
+/* Raven UI sidebar. Square items, hover fill,
+   selected fill plus a 3px accent bar on the left edge. */
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+.scroll {
+    flex: 1;
+    min-height: 0;
+    padding: 4px 8px 12px;
+}
+
+.sectionLabel {
+    padding: 18px 12px 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--raven-text-muted);
+}
+
+.link {
+    position: relative;
+    height: 36px;
+    padding: 0 12px;
+    margin-bottom: 2px;
+    border-radius: 0;
+    font-size: var(--mantine-font-size-sm);
+    color: var(--mantine-color-text);
+    background-color: transparent;
+
+    &:hover {
+        background-color: var(--raven-hover);
+    }
+
+    /* Doubled class beats Mantine's inline --nl-* variant colours. */
+    &.link[data-active],
+    &.link[data-active]:hover {
+        background-color: var(--raven-selected);
+        color: var(--mantine-color-text);
+        font-weight: 600;
+    }
+
+    &[data-active]::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 3px;
+        height: 16px;
+        margin-top: -8px;
+        background-color: var(--raven-accent);
+    }
+
+    &[data-active] .linkIcon {
+        color: var(--raven-accent);
+    }
+}
+
+.linkIcon {
+    display: block;
+    color: var(--raven-text-muted);
+}
+
+.footer {
+    padding: 8px 8px 12px;
+    border-top: 1px solid var(--raven-border);
+}
+
+.footerRow {
+    height: 40px;
+    padding: 0 12px;
+}
+
+.user {
+    padding: 8px 12px 0;
+    min-width: 0;
+}
+
+.userText {
+    min-width: 0;
+}
+
+.about {
+    display: block;
+    padding: 8px 12px 0;
+}

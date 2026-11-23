@@ -1,0 +1,84 @@
+Raven TAK Server
+Copyright (C) 2026 C4 Raven
+
+Raven is free software, licensed under the GNU General Public License,
+version 3 or (at your option) any later version. The full licence text is
+in LICENSE. Raven comes with ABSOLUTELY NO WARRANTY.
+
+This repository holds the source of the Raven server and web interface.
+
+WHAT IS DERIVED FROM UPSTREAM
+
+  server/   derived from OpenTAKServer
+            (https://github.com/brian7704/OpenTAKServer,
+            (C) 2023-2026 Brian Wallen and contributors, GPL-3.0)
+  ui/       derived from OpenTAKServer-UI
+            (https://github.com/brian7704/OpenTAKServer-UI,
+            (C) 2023-2026 Brian Wallen and contributors, GPL-3.0)
+
+C4 Raven forked both in August 2026 and has substantially modified them
+since. Everything not listed below as original work is derived from them.
+
+WHAT IS C4 RAVEN'S OWN WORK
+
+The following were written by C4 Raven, contain no OpenTAKServer code, and
+are C4 Raven's copyright (licensed under GPL-3.0-or-later as part of Raven).
+
+Server (server/):
+
+  Federation Hub bridge   raven/controllers/federation_hub_daemon.py,
+                          raven/fedhub_*.py,
+                          raven/blueprints/raven_api/federation_hub_api.py
+  Security and audit      raven/audit.py, raven/admin_view.py,
+                          raven/login_lockout.py, raven/turnstile.py,
+                          raven/no_email.py, raven/forms/SiteAccessLoginForm.py,
+                          raven/blueprints/raven_api/security_audit_api.py,
+                          raven/models/AuditEvent.py
+  Certificates            raven/cert_revocation.py, raven/cert_validity.py,
+                          raven/blueprints/raven_api/certificate_api.py,
+                          raven/models/EnrollmentBlock.py
+  Groups and sharing      raven/group_isolation.py, raven/cot_sharing.py
+  Onboarding / VPN        raven/blueprints/raven_api/onboard_api.py
+  Metrics                 raven/metrics.py, raven/models/MetricSample.py,
+                          raven/blueprints/raven_api/metrics_api.py
+  Retention, error logs   raven/retention.py, raven/models/RetentionSetting.py,
+                          raven/blueprints/raven_api/retention_api.py,
+                          raven/blueprints/raven_api/error_log_api.py
+  Offline chat            raven/offline_chat.py, raven/models/OfflineChatMessage.py
+  Remote Clear            raven/remote_clear.py, raven/models/PendingClearCommand.py
+  Missions                raven/mission_export.py,
+                          raven/blueprints/raven_api/mission_detail_api.py
+  Device profiles         raven/blueprints/raven_api/device_profile_tools_api.py,
+                          raven/models/DeviceProfile{Set,Setting,File}.py
+  Infrastructure          raven/_version.py, raven/db_upsert.py,
+                          raven/forms/fields.py, raven/models/columns.py,
+                          raven/models/serialization.py
+  Tests                   tests/test_*.py (except where they test upstream
+                          behaviour), README.md, vendor/README.md
+
+Web interface (ui/):
+
+  src/pages/FederationHub/          Federation Hub pages
+  src/pages/DeviceProfiles/         device profiles (except index.tsx and
+                                    its CSS module)
+  src/pages/ServerRequests/         server requests (except ScheduledJobsTab.tsx)
+  src/pages/MissionDetail.tsx, src/pages/Dashboard/MessageTraffic.tsx,
+  src/pages/Dashboard/serverStatus.ts
+  src/pages/MeshtasticGate.tsx, src/pages/MeshtasticOffNotice.tsx,
+  src/pages/Map/{MapGate,MapDisplayControl}.tsx, src/pages/Map/mapDisplay.ts,
+  src/features.ts, src/lazyPage.ts  optional features
+  src/adminAccess.ts, src/components/{AdminAreasModal,AdminOnlyNotice,
+  ReadOnlyNotice}.tsx               read-only admin role
+  src/components/{ItemGroups,UserVisibilityDiagram,FederationPolicyDiagram,
+  UserCertificatesModal,VpnQrPanel,AboutModal}.tsx, src/pages/eudFederation.ts
+  src/components/ui/, src/global.css, src/pages/pageUtils.tsx
+                                    Raven UI component kit and styling
+  docs/, README.md, DESIGN.md, the Raven logo, and the tests C4 Raven wrote
+
+server/NOTICE and ui/NOTICE carry the same details for each part.
+
+Third-party libraries are not included in this repository; each keeps its
+own licence. One library is vendored here: server/vendor/adsbxcot-*.whl
+(Apache-2.0, licence inside the wheel). Raven's install bundles carry the
+complete corresponding source of each release, including the installer, and
+the full licence text of every bundled third-party package.

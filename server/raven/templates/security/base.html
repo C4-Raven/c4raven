@@ -1,0 +1,155 @@
+{# djlint:off H030,H031 #}
+{# CUSTOM: Raven-branded override of flask_security/templates/security/base.html.
+   Applies to every Flask-Security fallback page (change password, 2FA
+   setup, etc.) that isn't handled by the React SPA, so they don't look
+   like a bare, unstyled default form. #}
+{% block doc -%}
+<!DOCTYPE html>
+<html{% block html_attribs %}{% endblock html_attribs %}>
+  {%- block html %}
+  <head>
+    {#- Same colour-scheme key as the web UI; falls back to the OS setting
+        only when nothing is stored, then to dark. #}
+    <script>
+      (function () {
+        var scheme = null;
+        try { scheme = localStorage.getItem('raven-color-scheme'); } catch (e) {}
+        if (scheme !== 'light' && scheme !== 'dark') {
+          scheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', scheme);
+      })();
+    </script>
+    {%- block head %}
+    <title>{% block title %}{{ title|default }}{% endblock title %}</title>
+
+      {%- block metas %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      {%- endblock metas %}
+
+      {%- block head_scripts %}
+      {%- endblock head_scripts %}
+
+      {%- block styles %}
+        <style>
+          /* Raven UI look, matching the web UI: flat, an 8px-rounded card
+             with 6px-rounded controls, Segoe UI, light and dark themes (dark by default). */
+          :root, :root[data-theme="dark"] {
+            color-scheme: dark;
+            --bg: #0e0f11;
+            --surface: #17181b;
+            --border: #373a40;
+            --input-border: #5c5f66;
+            --text: #f3f3f3;
+            --muted: #c1c2c5;
+            --accent: #44639f;
+            --accent-hover: #39588f;
+            --link: #94a8d0;
+            --error: #ff8787;
+            --logo-filter: none;
+          }
+          :root[data-theme="light"] {
+            color-scheme: light;
+            --bg: #f3f3f3;
+            --surface: #fff;
+            --border: #e5e5e5;
+            --input-border: #8a8a8a;
+            --text: #1b1b1b;
+            --muted: #5f5f5f;
+            --accent: #5474b4;
+            --accent-hover: #44639f;
+            --link: #44639f;
+            --error: #c42b1c;
+            --logo-filter: invert(1) brightness(0.15);
+          }
+          body {
+            margin: 0;
+            min-height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 16px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.45;
+          }
+          .fs-card {
+            width: 100%;
+            max-width: 420px;
+            box-sizing: border-box;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 36px 40px 32px;
+          }
+          @media (max-width: 480px) { .fs-card { padding: 28px 20px 24px; } }
+          .fs-card img.fs-logo { display: block; height: 56px; width: auto; max-width: 100%; margin: 0 auto 24px; filter: var(--logo-filter); }
+          .fs-card h1 { font-size: 20px; font-weight: 600; line-height: 1.3; margin: 0 0 20px; text-align: center; }
+          .fs-card h3 { font-size: 14px; font-weight: 400; color: var(--muted); margin: 0 0 16px; text-align: center; }
+          .fs-card p.fs-hint { font-size: 14px; color: var(--muted); margin: -8px 0 20px; text-align: center; }
+          .fs-div { margin-bottom: 14px; }
+          .fs-div label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+          .fs-div input[type="text"],
+          .fs-div input[type="email"],
+          .fs-div input[type="password"],
+          .fs-div input[type="tel"] {
+            width: 100%;
+            box-sizing: border-box;
+            background: var(--surface);
+            border: 1px solid var(--input-border);
+            border-radius: 6px;
+            padding: 7px 10px;
+            color: var(--text);
+            font: inherit;
+          }
+          .fs-div input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: var(--accent); }
+          input[type="submit"], button[type="submit"] {
+            width: 100%;
+            background: var(--accent);
+            color: #fff;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            padding: 7px 12px;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 6px;
+            transition: background-color 80ms linear;
+          }
+          input[type="submit"]:hover, button[type="submit"]:hover { background: var(--accent-hover); }
+          input[type="submit"]:focus-visible, button[type="submit"]:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+          .fs-error-msg { color: var(--error); font-size: 13px; }
+          #fs-form-errors ul { list-style: none; padding: 0; margin: 6px 0 0; }
+          .fs-div ul { list-style: none; padding: 0; margin: 6px 0 0; }
+          .fs-card hr { border: none; border-top: 1px solid var(--border); margin: 24px 0 12px; }
+          .fs-card h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
+          .fs-card > ul, .fs-card ul ul { list-style: none; padding: 0; margin: 0; }
+          .fs-card > ul li { margin-bottom: 8px; font-size: 13px; }
+          .fs-card a { color: var(--link); text-decoration: none; }
+          .fs-card a:hover { text-decoration: underline; }
+        </style>
+      {%- endblock styles %}
+    {%- endblock head %}
+  </head>
+  <body{% block body_attribs %}{% endblock body_attribs %}>
+    {% block body -%}
+      {% block navbar %}
+      {%- endblock navbar %}
+      <div class="fs-card">
+        <img class="fs-logo" src="/raven-logo.png" alt="C4 Raven">
+        {% block content -%}
+        {%- endblock content %}
+      </div>
+
+      {% block scripts %}
+      {%- endblock scripts %}
+    {%- endblock body %}
+  </body>
+  {%- endblock html %}
+</html>
+{% endblock doc -%}

@@ -1,0 +1,187 @@
+/*
+ * Raven UI surface language (see DESIGN.md): flat, 4px controls, 8px cards, square shell.
+ * Colours come from the --raven-* tokens below, defined per colour scheme, so
+ * every rule here works in both light and dark. No gradients, no decorative
+ * shadows, no motion beyond ~100ms colour transitions.
+ */
+
+:root[data-mantine-color-scheme='light'] {
+    --raven-bg: #f3f3f3;
+    --raven-chrome: #ebebeb;
+    --raven-surface: #fff;
+    --raven-border: #e5e5e5;
+    --raven-border-strong: #d1d1d1;
+    --raven-hover: rgb(0, 0, 0, 0.045);
+    --raven-selected: rgb(0, 0, 0, 0.065);
+    --raven-text-muted: #5f5f5f;
+    --raven-scroll-thumb: #c2c2c2;
+    --raven-tint-strength: 14%;
+}
+
+:root[data-mantine-color-scheme='dark'] {
+    --raven-bg: var(--mantine-color-dark-7);
+    --raven-chrome: var(--mantine-color-dark-8);
+    --raven-surface: var(--mantine-color-dark-6);
+    --raven-border: var(--mantine-color-dark-4);
+    --raven-border-strong: var(--mantine-color-dark-3);
+    --raven-hover: rgb(255, 255, 255, 0.05);
+    --raven-selected: rgb(255, 255, 255, 0.08);
+    --raven-text-muted: var(--mantine-color-dark-1);
+    --raven-scroll-thumb: var(--mantine-color-dark-4);
+    --raven-tint-strength: 18%;
+}
+
+:root {
+    --raven-accent: var(--mantine-primary-color-filled);
+    --raven-transition: 80ms linear;
+}
+
+html,
+body {
+    background: var(--raven-bg);
+}
+
+::selection {
+    background: color-mix(in srgb, var(--raven-accent) 35%, transparent);
+}
+
+* {
+    scrollbar-color: var(--raven-scroll-thumb) transparent;
+    scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--raven-scroll-thumb);
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+:focus-visible {
+    outline: 2px solid var(--raven-accent);
+    outline-offset: 2px;
+}
+
+/* Surfaces: Paper/Card, modals and dropdowns sit on --raven-surface (white in
+   light, one step above the page in dark). Flat — no gradients. */
+.mantine-Paper-root,
+.mantine-Card-root,
+.mantine-Modal-content,
+.mantine-Drawer-content,
+.mantine-Popover-dropdown,
+.mantine-Menu-dropdown,
+.mantine-Combobox-dropdown {
+    background-color: var(--raven-surface);
+}
+
+.mantine-Modal-header,
+.mantine-Drawer-header {
+    background-color: var(--raven-surface);
+}
+
+.mantine-Popover-dropdown,
+.mantine-Menu-dropdown,
+.mantine-Combobox-dropdown {
+    border-color: var(--raven-border);
+}
+
+.mantine-Button-root,
+.mantine-ActionIcon-root,
+.mantine-NavLink-root,
+.mantine-Menu-item {
+    transition:
+        background-color var(--raven-transition),
+        border-color var(--raven-transition),
+        color var(--raven-transition);
+}
+
+/* Raven UI toggle: the off track needs a visible outline on light chrome. */
+:root[data-mantine-color-scheme='light'] .mantine-Switch-input:not(:checked) + .mantine-Switch-track {
+    border-color: #8a8a8a;
+}
+
+/* "Off" toggle on light: hollow track, dark thumb (white-on-grey was near invisible). */
+:root[data-mantine-color-scheme='light'] .mantine-Switch-input:not(:checked):not(:disabled) + .mantine-Switch-track {
+    background-color: var(--raven-surface);
+}
+
+:root[data-mantine-color-scheme='light'] .mantine-Switch-input:not(:checked):not(:disabled) + .mantine-Switch-track .mantine-Switch-thumb {
+    background-color: #5f5f5f;
+    border-color: #5f5f5f;
+}
+
+/* White logo artwork: invert to near-black on light chrome. */
+.raven-logo {
+    display: block;
+}
+
+:root[data-mantine-color-scheme='light'] .raven-logo {
+    filter: invert(1) brightness(0.15);
+}
+
+/* mantine-datatable defaults to the page background; tables sit on a Panel surface */
+.mantine-datatable {
+    --mantine-datatable-background-color: var(--raven-surface);
+    --mantine-datatable-background-color-light: var(--raven-surface);
+    --mantine-datatable-background-color-dark: var(--raven-surface);
+    --mantine-datatable-border-color-light: var(--raven-border);
+    --mantine-datatable-border-color-dark: var(--raven-border);
+}
+
+/* Auto table layout squeezes badges to an ellipsis ("PUB…"); keep their label whole. */
+.mantine-datatable td .mantine-Badge-root {
+    min-width: max-content;
+}
+
+@keyframes raven-pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+/* UserVisibilityDiagram connectors: two-way / one-way colours per scheme
+   (Mantine's *-light-color resolves to near-white in dark mode, which hid the
+   difference), keyboard-focusable edge hit areas (highlight is drawn by the
+   component, so no box outline) and the direction "flow" on a hovered one-way edge. */
+:root[data-mantine-color-scheme='light'] {
+    --uvd-two-way: var(--mantine-color-indigo-6);
+    --uvd-one-way: var(--mantine-color-orange-7);
+}
+
+:root[data-mantine-color-scheme='dark'] {
+    --uvd-two-way: var(--mantine-color-indigo-3);
+    --uvd-one-way: var(--mantine-color-orange-4);
+}
+
+.uvd-edge-hit:focus {
+    outline: none;
+}
+
+.uvd-flow {
+    animation: uvd-flow 0.7s linear infinite;
+}
+
+@keyframes uvd-flow {
+    to {
+        stroke-dashoffset: var(--uvd-dash-cycle, -10px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .uvd-flow {
+        animation: none;
+    }
+}

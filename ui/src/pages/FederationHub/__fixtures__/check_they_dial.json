@@ -1,0 +1,81 @@
+[
+  {
+    "code": "ca_trusted",
+    "detail": "Fingerprint 83:FB:2D:07:AF:76:5A:82:35:F9:63:77:9B:91:8F:3E:72:16:86:33:67:CA:94:0A:DF:AA:44:C3:C1:B9:96:62",
+    "level": "ok",
+    "ok": true,
+    "title": "Their CA certificate is trusted"
+  },
+  {
+    "code": "ca_in_policy",
+    "detail": "Connections from this CA are accepted",
+    "level": "ok",
+    "ok": true,
+    "title": "Their CA is in the active policy"
+  },
+  {
+    "code": "rules_out",
+    "detail": "A rule sends our data to them",
+    "level": "ok",
+    "ok": true,
+    "title": "We share data with them"
+  },
+  {
+    "code": "rules_in",
+    "detail": "A rule delivers their data to us",
+    "level": "ok",
+    "ok": true,
+    "title": "We receive data from them"
+  },
+  {
+    "code": "filter_compatible",
+    "detail": "Everything is shared",
+    "level": "ok",
+    "ok": true,
+    "title": "Group filters will let data through"
+  },
+  {
+    "code": "dial_direction",
+    "detail": "They connect to us",
+    "level": "ok",
+    "ok": true,
+    "title": "Only one side connects"
+  },
+  {
+    "code": "dns",
+    "detail": "Not needed: they connect to us",
+    "level": "skipped",
+    "ok": true,
+    "title": "Their address resolves"
+  },
+  {
+    "code": "tcp",
+    "detail": "Not needed: they connect to us",
+    "level": "skipped",
+    "ok": true,
+    "title": "Their port is reachable"
+  },
+  {
+    "code": "connected",
+    "detail": "No live connection yet",
+    "fix": "Send the other admin the instructions so they connect to us",
+    "level": "error",
+    "ok": false,
+    "title": "Connected"
+  },
+  {
+    "code": "traffic_flowing",
+    "detail": "No messages yet",
+    "fix": "Move a device on either side; TAK Servers also need Manage Groups set for the hub federate",
+    "level": "warning",
+    "ok": false,
+    "title": "Data is flowing"
+  },
+  {
+    "code": "ca_expiry",
+    "detail": "Expiry date unknown",
+    "level": "skipped",
+    "ok": true,
+    "title": "Their CA isn't about to expire"
+  }
+]

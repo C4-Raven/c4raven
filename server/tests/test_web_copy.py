@@ -1,0 +1,161 @@
+"""
+Tests for the browser copy of MPEG-TS-over-RTSP streams (mediamtx_api.start_web_copy).
+
+Some Android video publishers send RTSP with one MPEG-TS track, which MediaMTX can't serve over WebRTC or HLS.
+Raven copies the video out of it to <path>_raven_web and points the browser links there.
+"""
+
+from unittest import mock
+
+import pytest
+from flask import Flask
+
+from raven.blueprints.raven_api import mediamtx_api
+from raven.blueprints.raven_api.mediamtx_api import WEB_COPY_SUFFIX, start_web_copy
+from raven.defaultconfig import DefaultConfig
+from raven.models.VideoStream import VideoStream
+
+
+@pytest.fixture
+def app():
+    app = Flask("raven-test")
+    app.config.from_object(DefaultConfig)
+    app.config["RAVEN_MEDIAMTX_API_ADDRESS"] = "http://mediamtx.invalid:9997"
+    with app.app_context():
+        yield app
+
+
+def _status(code):
+    response = mock.Mock()
+    response.status_code = code
+    response.text = ""
+    return response
+
+
+@pytest.fixture(autouse=True)
+def mediamtx_config():
+    """The MediaMTX config API (path patch/add) is always mocked: never reach a real server."""
+    with mock.patch.object(mediamtx_api.requests, "patch", return_value=_status(200)) as patch, \
+            mock.patch.object(mediamtx_api.requests, "post", return_value=_status(200)) as post:
+        yield patch, post
+
+
+def _tracks(tracks):
+    response = mock.Mock()
+    response.json.return_value = {"name": "live/VIDEO_1", "ready": True, "tracks": tracks}
+    return response
+
+
+def test_mpegts_stream_gets_a_web_copy(app):
+    app.config["RAVEN_MEDIAMTX_TOKEN"] = "tok"
+    with mock.patch.object(mediamtx_api.requests, "get", return_value=_tracks(["MPEG-TS"])), \
+            mock.patch.object(mediamtx_api.subprocess, "Popen") as popen:
+        assert start_web_copy("live/VIDEO_1", "8554") == "live/VIDEO_1" + WEB_COPY_SUFFIX
+
+    command = popen.call_args.args[0]
+    assert command[0] == "ffmpeg"
+    # Reads and publishes as Raven itself: a grouped source isn't open to anonymous readers
+    assert "rtsp://127.0.0.1:8554/live/VIDEO_1?token=tok" in command
+    assert command[-1] == "rtsp://127.0.0.1:8554/live/VIDEO_1" + WEB_COPY_SUFFIX + "?token=tok"
+    # Copies, never re-encodes, and drops the KLV data track
+    assert command[command.index("-c") + 1] == "copy"
+    assert "0:v" in command and "0:d" not in command
+    assert popen.call_args.kwargs["start_new_session"] is True
+
+
+@pytest.mark.parametrize("tracks", [["H264"], ["H264", "MPEG-4 Audio"], ["H265"], [], None])
+def test_playable_streams_get_no_copy(app, tracks):
+    with mock.patch.object(mediamtx_api.requests, "get", return_value=_tracks(tracks)), \
+            mock.patch.object(mediamtx_api.subprocess, "Popen") as popen:
+        assert start_web_copy("obs", 8554) is None
+    popen.assert_not_called()
+
+
+def test_api_failure_starts_nothing(app):
+    with mock.patch.object(mediamtx_api.requests, "get", side_effect=OSError("down")), \
+            mock.patch.object(mediamtx_api.subprocess, "Popen") as popen:
+        assert start_web_copy("live/VIDEO_1", 8554) is None
+    popen.assert_not_called()
+
+
+def test_ffmpeg_missing_returns_none(app):
+    with mock.patch.object(mediamtx_api.requests, "get", return_value=_tracks(["MPEG-TS"])), \
+            mock.patch.object(mediamtx_api.subprocess, "Popen", side_effect=FileNotFoundError):
+        assert start_web_copy("live/VIDEO_1", 8554) is None
+
+
+def test_webhook_ignores_the_copy_path(app):
+    app.config["RAVEN_MEDIAMTX_TOKEN"] = "tok"
+    with app.test_request_context(
+        "/api/mediamtx/webhook",
+        query_string={
+            "token": "tok",
+            "event": "ready",
+            "rtsp_port": "8554",
+            "path": "live/VIDEO_1" + WEB_COPY_SUFFIX,
+        },
+    ), mock.patch.object(mediamtx_api, "db") as db:
+        assert mediamtx_api.mediamtx_webhook() == ("", 200)
+    db.session.query.assert_not_called()
+
+
+def test_links_use_the_web_copy(app):
+    stream = VideoStream(path="live/VIDEO_1", port=8554, mediamtx_settings="")
+    with app.test_request_context("/", base_url="https://tak.example"):
+        links = stream.to_json()
+        assert links["webrtc_link"] == "https://tak.example:443/webrtc/live/VIDEO_1/"
+
+        stream.web_path = "live/VIDEO_1" + WEB_COPY_SUFFIX
+        links = stream.to_json()
+        assert links["webrtc_link"] == f"https://tak.example:443/webrtc/live/VIDEO_1{WEB_COPY_SUFFIX}/"
+        assert links["hls_link"] == f"https://tak.example:443/hls/live/VIDEO_1{WEB_COPY_SUFFIX}/"
+        # RTSP (ATAK) keeps reading the original
+        assert links["rtsp_link"] == "rtsp://tak.example:8554/live/VIDEO_1"
+
+
+# --- recording: MediaMTX can't record an MPEG-TS track, so the web copy is recorded ---
+
+
+@pytest.mark.parametrize("record", [True, False])
+def test_web_copy_records_when_the_source_does(app, mediamtx_config, record):
+    patch, _ = mediamtx_config
+    with mock.patch.object(mediamtx_api.requests, "get", return_value=_tracks(["MPEG-TS"])), \
+            mock.patch.object(mediamtx_api.subprocess, "Popen"):
+        start_web_copy("live/VIDEO_1", 8554, record)
+    url = patch.call_args.args[0]
+    assert url.endswith("/v3/config/paths/patch/live/VIDEO_1" + WEB_COPY_SUFFIX)
+    assert patch.call_args.kwargs["json"] == {"record": record}
+
+
+def test_web_copy_path_is_added_when_not_configured_yet(app, mediamtx_config):
+    patch, post = mediamtx_config
+    patch.return_value = _status(404)
+    mediamtx_api.set_web_copy_recording("live/VIDEO_1" + WEB_COPY_SUFFIX, True)
+    assert post.call_args.args[0].endswith("/v3/config/paths/add/live/VIDEO_1" + WEB_COPY_SUFFIX)
+    assert post.call_args.kwargs["json"] == {"record": True}
+
+
+def test_mediamtx_down_does_not_raise(app, mediamtx_config):
+    patch, _ = mediamtx_config
+    patch.side_effect = OSError("down")
+    mediamtx_api.set_web_copy_recording("live/VIDEO_1" + WEB_COPY_SUFFIX, True)
+
+
+def test_playable_streams_record_themselves(app, mediamtx_config):
+    patch, post = mediamtx_config
+    with mock.patch.object(mediamtx_api.requests, "get", return_value=_tracks(["H264"])):
+        assert start_web_copy("obs", 8554, True) is None
+    patch.assert_not_called()
+    post.assert_not_called()
+
+
+@pytest.mark.parametrize(
+    "path,expected",
+    [
+        ("live/VIDEO_1" + WEB_COPY_SUFFIX, "live/VIDEO_1"),
+        ("live/VIDEO_1", "live/VIDEO_1"),
+        ("obs", "obs"),
+    ],
+)
+def test_recordings_of_the_copy_belong_to_the_source(path, expected):
+    assert mediamtx_api.recording_stream_path(path) == expected

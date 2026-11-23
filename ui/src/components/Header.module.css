@@ -1,0 +1,20 @@
+.bar {
+  height: 100%;
+  padding-inline: var(--mantine-spacing-md);
+  background: var(--raven-chrome);
+  border-bottom: 1px solid var(--raven-border);
+}
+
+.standalone {
+  height: 52px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.actionIcon {
+  width: 18px;
+  height: 18px;
+}

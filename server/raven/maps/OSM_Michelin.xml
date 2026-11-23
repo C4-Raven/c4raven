@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customMapSource>
+  <name>Michelin</name>
+  <minZoom>0</minZoom>
+  <maxZoom>19</maxZoom>
+  <tileType>png</tileType>
+  <tileUpdate>None</tileUpdate>
+  <backgroundColor>#000000</backgroundColor>
+  <serverParts>1 2 3 4</serverParts>
+  <url>https://map{$serverpart}.viamichelin.com/map/mapdirect?map=viamichelin&amp;z={$z}&amp;x={$x}&amp;y={$y}&amp;format=png&amp;version=201901161110&amp;layer=background&amp;locale=default&amp;cs=1&amp;protocol=https</url>
+</customMapSource>

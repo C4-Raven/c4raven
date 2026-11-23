@@ -1,0 +1,81 @@
+/* Shared page building blocks. See DESIGN.md. */
+
+.pageHeader {
+    margin-bottom: var(--mantine-spacing-xl);
+}
+
+.pageTitle {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.section {
+    margin-bottom: var(--mantine-spacing-xl);
+}
+
+.sectionDivider {
+    padding-top: var(--mantine-spacing-lg);
+    border-top: 1px solid var(--raven-border);
+}
+
+.sectionHeader {
+    margin-bottom: var(--mantine-spacing-md);
+}
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.panel {
+    background-color: var(--raven-surface);
+    border: 1px solid var(--raven-border);
+    /* Stand-alone container: 8px Raven UI card. Clip so a flush
+       table's square corners don't cover the rounded border. Mantine
+       dropdowns render in a portal, so nothing inside gets cut off. */
+    border-radius: var(--mantine-radius-md);
+    overflow: hidden;
+}
+
+.panelHeader {
+    padding-bottom: var(--mantine-spacing-sm);
+    margin-bottom: var(--mantine-spacing-md);
+    border-bottom: 1px solid var(--raven-border);
+}
+
+.statTile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--mantine-spacing-md);
+    min-height: 120px;
+    background-color: color-mix(in srgb, var(--tile-color) var(--raven-tint-strength), var(--raven-surface));
+    border: 1px solid color-mix(in srgb, var(--tile-color) 22%, transparent);
+    border-radius: var(--mantine-radius-md);
+}
+
+.statIcon {
+    display: flex;
+    margin-bottom: auto;
+    color: var(--tile-color);
+}
+
+.statIcon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.statValue {
+    margin-top: var(--mantine-spacing-md);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.statLabel {
+    font-size: var(--mantine-font-size-sm);
+    color: var(--raven-text-muted);
+}

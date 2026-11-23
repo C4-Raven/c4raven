@@ -1,0 +1,27 @@
+.root {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 96px 16px;
+
+    @media (max-width: $mantine-breakpoint-sm) {
+        padding-top: 48px;
+    }
+}
+
+.code {
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--raven-text-muted);
+}
+
+.title {
+    margin-top: var(--mantine-spacing-md);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.description {
+    margin: var(--mantine-spacing-sm) 0 var(--mantine-spacing-xl);
+}

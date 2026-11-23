@@ -1,0 +1,1722 @@
+# Translations template for C4 Raven.
+# Copyright (C) 2026 C4 Raven
+# This file is distributed under the same license as the C4 Raven project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: C4 Raven VERSION\n"
+"Report-Msgid-Bugs-To: support@c4raven.net\n"
+"POT-Creation-Date: 2026-11-20 18:26+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#, python-format
+msgid "%(extension)s is not an allowed file extension"
+msgstr ""
+
+#, python-format
+msgid "%(field)s is too long"
+msgstr ""
+
+#, python-format
+msgid "%(field)s must be an http(s) URL"
+msgstr ""
+
+#, python-format
+msgid ""
+"%(group_name)s is locked. Unlock it in the group's policies before "
+"changing its members or deleting it"
+msgstr ""
+
+#, python-format
+msgid ""
+"%(group_name)s is the only group of %(summary)s. Deleting it would make "
+"them visible to everyone -- give them another group first"
+msgstr ""
+
+#, python-format
+msgid "%(host)s can't be resolved: %(error)s"
+msgstr ""
+
+#, python-format
+msgid "%(host)s:%(port)s accepts connections"
+msgstr ""
+
+#, python-format
+msgid "%(key)s must be true or false"
+msgstr ""
+
+#, python-format
+msgid "%(label)s: keep for between 1 hour and 10 years, or forever"
+msgstr ""
+
+#, python-format
+msgid "%(n)s live connection(s)"
+msgstr ""
+
+#, python-format
+msgid "%(name)s group already exists"
+msgstr ""
+
+#, python-format
+msgid "%(sent)s sent, %(received)s received"
+msgstr ""
+
+#, python-format
+msgid "%(uid)s is already assigned to another user"
+msgstr ""
+
+#, python-format
+msgid "%(username)s and mission %(mission_name)s are not in the same group"
+msgstr ""
+
+#, python-format
+msgid "%(username)s has no devices enrolled to receive a file"
+msgstr ""
+
+#, python-format
+msgid "%(username)s is a protected system account and can't be modified"
+msgstr ""
+
+#, python-format
+msgid "%(username)s is already activated"
+msgstr ""
+
+#, python-format
+msgid "%(username)s is already deactivated"
+msgstr ""
+
+#, python-format
+msgid "%(username)s is not a member of %(group_name)s"
+msgstr ""
+
+#, python-format
+msgid "%(username)s is not a read-only admin"
+msgstr ""
+
+#, python-format
+msgid "%(username)s is not in the %(group_name)s group"
+msgstr ""
+
+msgid "2FA verification required"
+msgstr ""
+
+msgid "A different video stream already uses this uid"
+msgstr ""
+
+msgid "A file is required"
+msgstr ""
+
+#, python-format
+msgid "A filter named %(name)s already exists"
+msgstr ""
+
+msgid "A layer can't be moved inside itself"
+msgstr ""
+
+#, python-format
+msgid "A layer with uid %(uid)s already exists"
+msgstr ""
+
+msgid "A profile with that name already exists"
+msgstr ""
+
+msgid "A rule delivers their data to us"
+msgstr ""
+
+msgid "A rule sends our data to them"
+msgstr ""
+
+msgid "A server with this CA is already connected"
+msgstr ""
+
+msgid "A user can't connect to themselves"
+msgstr ""
+
+msgid "Access Denied"
+msgstr ""
+
+msgid "Account is deactivated"
+msgstr ""
+
+#, python-format
+msgid ""
+"Add an Outgoing Connection: address %(host)s, port %(port)s, protocol "
+"version 2, enabled. We won't connect to you."
+msgstr ""
+
+#, python-format
+msgid "Add at least one allowed group for %(field)s"
+msgstr ""
+
+#, python-format
+msgid "Add at least one blocked group for %(field)s"
+msgstr ""
+
+msgid "Admin certificate not found"
+msgstr ""
+
+msgid "Administrator role required"
+msgstr ""
+
+msgid ""
+"Agree with the other admin which ONE side connects. If both sides "
+"connect, the hubs drop one of the two connections over and over."
+msgstr ""
+
+msgid "Another change to the Federation Hub is in progress. Try again in a moment"
+msgstr ""
+
+msgid "Any other federation server"
+msgstr ""
+
+#, python-format
+msgid "Ask an administrator to assign %(uid)s to you"
+msgstr ""
+
+msgid "Ask the other admin for their new CA"
+msgstr ""
+
+msgid ""
+"Ask the other admin to open this port in their firewall and check the "
+"port number"
+msgstr ""
+
+msgid "Authentication required"
+msgstr ""
+
+#, python-format
+msgid "Can't connect to %(host)s:%(port)s: %(error)s"
+msgstr ""
+
+#, python-format
+msgid "Cannot find mission %(mission_guid)s"
+msgstr ""
+
+#, python-format
+msgid "Cannot find mission %(mission_name)s"
+msgstr ""
+
+msgid "Certificate password not found"
+msgstr ""
+
+#, python-format
+msgid "Certificate validity must be a whole number of days from 1 to %(max)s"
+msgstr ""
+
+#, python-format
+msgid "Check that our CA's fingerprint is %(fp)s."
+msgstr ""
+
+msgid "Check the spelling; it must be the exact name in their server certificate"
+msgstr ""
+
+msgid "Choose \"Raven with its own hub\"."
+msgstr ""
+
+msgid "Choose JSON or YAML"
+msgstr ""
+
+msgid "Choose a file to upload"
+msgstr ""
+
+msgid "Choose the other server's CA certificate file"
+msgstr ""
+
+msgid "Choose the token group to issue a token for"
+msgstr ""
+
+msgid "Choose whether we connect to them or they connect to us"
+msgstr ""
+
+#, python-format
+msgid ""
+"Connect to %(where)s using federation protocol v2 over mutual TLS. We "
+"won't connect to you."
+msgstr ""
+
+msgid "Connected"
+msgstr ""
+
+msgid "Connections from this CA are accepted"
+msgstr ""
+
+msgid "Could not copy the profile's files"
+msgstr ""
+
+#, python-format
+msgid "Could not find user %(username)s"
+msgstr ""
+
+msgid "Could not store that file"
+msgstr ""
+
+msgid "Couldn't reach RabbitMQ to check the bridge"
+msgstr ""
+
+msgid "Couldn't reach RabbitMQ to restart the bridge"
+msgstr ""
+
+msgid "Data is flowing"
+msgstr ""
+
+#, python-format
+msgid "Data package with hash '%(hash)s' not found"
+msgstr ""
+
+msgid "Direction must be IN or OUT"
+msgstr ""
+
+msgid "Direction must be IN, OUT or BOTH"
+msgstr ""
+
+msgid "Document not found"
+msgstr ""
+
+msgid ""
+"Don't add an Outgoing Connection to us: we connect to your TAK Server's "
+"federation port (9001 by default). Make sure it's reachable from us."
+msgstr ""
+
+msgid ""
+"Don't connect to us: we connect to you. Make sure your federation port is"
+" reachable from us."
+msgstr ""
+
+msgid ""
+"Download your hub's CA and send it to us; upload our CA (attached) when "
+"asked."
+msgstr ""
+
+#, python-format
+msgid "EUD %(eud_uid)s not found"
+msgstr ""
+
+msgid ""
+"Edit the partner and save what to share, or use Repair if this hub's own "
+"CA is missing"
+msgstr ""
+
+msgid "Enable the partner"
+msgstr ""
+
+msgid "Enter a name for this server"
+msgstr ""
+
+msgid "Enter only the host name or IP address, without https:// or a path"
+msgstr ""
+
+msgid "Enter the other server's address"
+msgstr ""
+
+msgid "Enter the other server's address and port"
+msgstr ""
+
+msgid "Enter the port in the port field, not after the address"
+msgstr ""
+
+msgid "Enter your 2FA code"
+msgstr ""
+
+msgid "Everything is shared"
+msgstr ""
+
+msgid "Expected a JSON list of invitations"
+msgstr ""
+
+msgid "Expected true or false"
+msgstr ""
+
+msgid "Expiry date unknown"
+msgstr ""
+
+msgid "External data needs a name, urlData or urlView"
+msgstr ""
+
+#, python-format
+msgid "Failed to add %(name)s group: %(e)s"
+msgstr ""
+
+#, python-format
+msgid "Failed to add mission: %(e)s"
+msgstr ""
+
+msgid "Failed to add report"
+msgstr ""
+
+#, python-format
+msgid "Failed to add users to %(group_name)s: %(e)s"
+msgstr ""
+
+#, python-format
+msgid "Failed to delete %(group_name)s: %(e)s"
+msgstr ""
+
+#, python-format
+msgid "Failed to delete content with hash %(hash)s: %(e)s"
+msgstr ""
+
+#, python-format
+msgid "Failed to delete token: %(e)s"
+msgstr ""
+
+#, python-format
+msgid "Failed to delete user: %(e)s"
+msgstr ""
+
+msgid "Failed to fetch broker metrics"
+msgstr ""
+
+#, python-format
+msgid "Failed to parse data: %(e)s"
+msgstr ""
+
+#, python-format
+msgid "Failed to parse lat/lon: %(e)s"
+msgstr ""
+
+msgid "Failed to read metrics"
+msgstr ""
+
+#, python-format
+msgid "Failed to remove %(username)s from %(group_name)s: %(e)s"
+msgstr ""
+
+#, python-format
+msgid "Failed to revoke the certificate: %(error)s"
+msgstr ""
+
+#, python-format
+msgid "Failed to save certificate for %(username)s"
+msgstr ""
+
+msgid "Failed to save document"
+msgstr ""
+
+msgid "Failed to save retention settings"
+msgstr ""
+
+msgid "Failed to save the uploaded file"
+msgstr ""
+
+msgid "Failed to subscribe"
+msgstr ""
+
+#, python-format
+msgid "Failed to update %(username)s in %(group_name)s: %(e)s"
+msgstr ""
+
+#, python-format
+msgid "Failed to update group subscriptions for %(username)s: %(e)s"
+msgstr ""
+
+#, python-format
+msgid "Federating with %(name)s"
+msgstr ""
+
+msgid "Federation Hub accepted the change but isn't enforcing it"
+msgstr ""
+
+msgid "Federation Hub didn't keep the CA certificate. Nothing was changed"
+msgstr ""
+
+msgid "Federation Hub doesn't report its own CA. Check the hub's installation"
+msgstr ""
+
+msgid "Federation Hub has no active federation policy"
+msgstr ""
+
+#, python-format
+msgid ""
+"Federation Hub has no active policy, and Repair can't create one while "
+"stored policies exist. Activate one of them (%(names)s) under Advanced > "
+"Policy editor, or with its Activate button"
+msgstr ""
+
+msgid "Federation Hub is not running"
+msgstr ""
+
+msgid "Federation Hub is not set up on this server"
+msgstr ""
+
+#, python-format
+msgid ""
+"Federation Hub may already be enforcing part of this change (%(error)s). "
+"There was no earlier policy to go back to, so the policy and any CA "
+"certificate it uses were left in place. Check them under Advanced"
+msgstr ""
+
+#, python-format
+msgid ""
+"Federation Hub may already hold part of this change (%(error)s). A stored"
+" policy uses the CA certificate, so it was left in place. Check the hub "
+"under Advanced"
+msgstr ""
+
+#, python-format
+msgid ""
+"Federation Hub may be half-changed: the change failed (%(error)s) and the"
+" previous policy couldn't be restored. Nothing else was undone; check the"
+" hub under Advanced"
+msgstr ""
+
+#, python-format
+msgid "Federation Hub refused to %(what)s"
+msgstr ""
+
+msgid "Federation Hub timed out"
+msgstr ""
+
+msgid "Feed filter is too long"
+msgstr ""
+
+msgid "File name cannot be blank"
+msgstr ""
+
+msgid "File not found"
+msgstr ""
+
+#, python-format
+msgid "File not found: %(filename)s}"
+msgstr ""
+
+msgid "Filter not found"
+msgstr ""
+
+msgid "Filter or user not found"
+msgstr ""
+
+#, python-format
+msgid "Fingerprint %(fp)s"
+msgstr ""
+
+msgid "Forbidden"
+msgstr ""
+
+#, python-format
+msgid "Group %(group_name)s does not exist"
+msgstr ""
+
+#, python-format
+msgid "Group %(group_name)s doesn't exist"
+msgstr ""
+
+#, python-format
+msgid "Group %(group_name)s not found"
+msgstr ""
+
+msgid "Group filters will let data through"
+msgstr ""
+
+#, python-format
+msgid "Group lists for %(field)s must be text"
+msgstr ""
+
+msgid "Group name is required"
+msgstr ""
+
+#, python-format
+msgid "Group names starting with %(prefix)s are reserved"
+msgstr ""
+
+#, python-format
+msgid "Group not found: %(group_name)s"
+msgstr ""
+
+msgid "Groups are only supported on SSL connections"
+msgstr ""
+
+msgid ""
+"If we connect to you: add no Outgoing Connection; make sure your "
+"federation port (9001 by default) is reachable from us."
+msgstr ""
+
+msgid ""
+"If we connect to you: choose \"They connect to us\" and add nothing "
+"outgoing; make sure your port 9102 is reachable from us."
+msgstr ""
+
+msgid ""
+"If we connect to you: don't connect to us; make sure your federation port"
+" is reachable."
+msgstr ""
+
+#, python-format
+msgid ""
+"If you connect to us: add an Outgoing Connection with address %(host)s, "
+"port %(port)s, protocol version 2, enabled."
+msgstr ""
+
+#, python-format
+msgid ""
+"If you connect to us: connect to %(where)s using federation protocol v2 "
+"over mutual TLS."
+msgstr ""
+
+#, python-format
+msgid ""
+"If you connect to us: under \"Who connects\", choose \"We connect to "
+"them\" and enter %(where)s."
+msgstr ""
+
+msgid "If you run C4 Raven with its own Federation Hub"
+msgstr ""
+
+msgid "If you run TAK Server"
+msgstr ""
+
+msgid ""
+"In TAK Server go to Configuration > Manage Federates > Edit "
+"Configuration, enable federation (v2) and restart TAK Server if it asks."
+msgstr ""
+
+msgid "Invalid Certificate"
+msgstr ""
+
+msgid "Invalid UID. UIDs need to be in UUID4 format"
+msgstr ""
+
+#, python-format
+msgid "Invalid UID: %(client_uid)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid UID: %(uid)s"
+msgstr ""
+
+msgid "Invalid ZMIST"
+msgstr ""
+
+msgid "Invalid code"
+msgstr ""
+
+#, python-format
+msgid "Invalid creatorUid: %(creator_uid)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid direction: %(direction)s"
+msgstr ""
+
+msgid "Invalid document ID"
+msgstr ""
+
+#, python-format
+msgid "Invalid file extension: %(extension)s"
+msgstr ""
+
+msgid "Invalid group id"
+msgstr ""
+
+msgid "Invalid invitation type"
+msgstr ""
+
+#, python-format
+msgid "Invalid invitation type: %(invitation_type)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid invitee: %(invitee)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid latitude: %(latitude)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid layer type %(type)s, must be one of %(types)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid longitude: %(longitude)s"
+msgstr ""
+
+msgid "Invalid metrics token"
+msgstr ""
+
+msgid "Invalid mission name"
+msgstr ""
+
+msgid "Invalid password"
+msgstr ""
+
+#, python-format
+msgid "Invalid property: %(key)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid recording_id: %(recording_id)s"
+msgstr ""
+
+msgid "Invalid report file"
+msgstr ""
+
+msgid "Invalid report package"
+msgstr ""
+
+#, python-format
+msgid "Invalid revocation reason: %(reason)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid role: %(new_role)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid secago value: %(sec_ago)s"
+msgstr ""
+
+msgid "Invalid serial number"
+msgstr ""
+
+#, python-format
+msgid "Invalid sort column: %(sort_by)s"
+msgstr ""
+
+msgid "Invalid token"
+msgstr ""
+
+#, python-format
+msgid "Invalid type: %(cot_type)s"
+msgstr ""
+
+#, python-format
+msgid "Invalid username: %(username)s"
+msgstr ""
+
+msgid "Invalid video connection"
+msgstr ""
+
+msgid "Invalid/unknown hash"
+msgstr ""
+
+msgid ""
+"Keep only one direction: remove the outgoing connection here, or ask the "
+"other admin to remove theirs"
+msgstr ""
+
+msgid "LDAP is enabled, please manage users on your LDAP server"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to activate users"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to add groups"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to add users to groups"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to assign roles"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to create users"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to deactivate users"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to delete groups"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to delete users"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to manage groups"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to manage users"
+msgstr ""
+
+msgid "LDAP is enabled, please use your LDAP server to reset passwords"
+msgstr ""
+
+msgid "LDAP is enabled. Please view and edit groups on your LDAP server"
+msgstr ""
+
+msgid "Leave \"What to share\" on \"Everything\" and click Connect."
+msgstr ""
+
+msgid "Make sure the partner's CA is added under Advanced > Certificates"
+msgstr ""
+
+msgid "MediaMTX is not running"
+msgstr ""
+
+msgid "Meshtastic is turned off on this server"
+msgstr ""
+
+msgid "Missing UID"
+msgstr ""
+
+msgid "Missing group name"
+msgstr ""
+
+msgid "Missing name"
+msgstr ""
+
+msgid "Missing or invalid certificate"
+msgstr ""
+
+msgid "Missing or invalid token"
+msgstr ""
+
+#, python-format
+msgid "Missing parameter: %(name)s"
+msgstr ""
+
+#, python-format
+msgid "Mission %(mission_name)s not found"
+msgstr ""
+
+#, python-format
+msgid "Mission not found: %(mission_name)s"
+msgstr ""
+
+msgid "Mission subscription not found"
+msgstr ""
+
+msgid ""
+"Move a device on either side; TAK Servers also need Manage Groups set for"
+" the hub federate"
+msgstr ""
+
+#, python-format
+msgid "No CoT found for UID %(uid)s"
+msgstr ""
+
+#, python-format
+msgid "No EUD found with UID %(invitee)s"
+msgstr ""
+
+#, python-format
+msgid "No EUD found with callsign %(invitee)s"
+msgstr ""
+
+#, python-format
+msgid "No content found with hash %(hash)s"
+msgstr ""
+
+#, python-format
+msgid "No content found with hash: %(content_hash)s"
+msgstr ""
+
+#, python-format
+msgid "No group found: %(group_name)s, %(direction)s"
+msgstr ""
+
+#, python-format
+msgid "No group found: %(invitee)s"
+msgstr ""
+
+msgid "No live connection yet"
+msgstr ""
+
+msgid "No messages yet"
+msgstr ""
+
+#, python-format
+msgid "No mission found with guid: %(mission_guid)s"
+msgstr ""
+
+msgid "No policy with that name"
+msgstr ""
+
+msgid "No rule delivers their data to us"
+msgstr ""
+
+msgid "No rule sends our data to them"
+msgstr ""
+
+msgid "No settings were given"
+msgstr ""
+
+msgid "No stored policy with that name"
+msgstr ""
+
+#, python-format
+msgid "No such UID: %(uid)s"
+msgstr ""
+
+msgid "No such certificate"
+msgstr ""
+
+#, python-format
+msgid "No such external data: %(uid)s"
+msgstr ""
+
+#, python-format
+msgid "No such file with hash %(content_hash)s"
+msgstr ""
+
+#, python-format
+msgid "No such group: %(group_name)s"
+msgstr ""
+
+#, python-format
+msgid "No such layer: %(uid)s"
+msgstr ""
+
+#, python-format
+msgid "No such mission feed: %(uid)s"
+msgstr ""
+
+#, python-format
+msgid "No such mission found: %(mission_name)s"
+msgstr ""
+
+#, python-format
+msgid "No such mission: %(mission_name)s"
+msgstr ""
+
+#, python-format
+msgid "No such parent layer: %(uid)s"
+msgstr ""
+
+#, python-format
+msgid "No such sibling layer: %(uid)s"
+msgstr ""
+
+#, python-format
+msgid "No such user: %(username)s"
+msgstr ""
+
+#, python-format
+msgid "No token found for %(username)s"
+msgstr ""
+
+#, python-format
+msgid "No user found with username %(invitee)s"
+msgstr ""
+
+msgid "Not needed: they connect to us"
+msgstr ""
+
+msgid "Not needed: we connect to them"
+msgstr ""
+
+msgid "Nothing to change"
+msgstr ""
+
+msgid "Nothing to change: provide access and/or expires_at"
+msgstr ""
+
+msgid "Only CONTENTS layers hold files"
+msgstr ""
+
+msgid "Only UID and ITEM layers hold map items"
+msgstr ""
+
+msgid "Only a partner with a trusted CA can be interconnected"
+msgstr ""
+
+msgid "Only administrators can add users to the administrators role"
+msgstr ""
+
+msgid "Only administrators can assign devices to others"
+msgstr ""
+
+msgid "Only administrators may change certificate validity"
+msgstr ""
+
+msgid "Only an admin or the mission creator can change this mission"
+msgstr ""
+
+msgid ""
+"Only an administrator or the owner of the device that sent it can change "
+"this CASEVAC"
+msgstr ""
+
+msgid ""
+"Only an administrator or the owner of the device that sent it can change "
+"this marker"
+msgstr ""
+
+msgid ""
+"Only an administrator or the owner of the device that sent it can delete "
+"this CASEVAC"
+msgstr ""
+
+msgid ""
+"Only an administrator or the owner of the device that sent it can delete "
+"this marker"
+msgstr ""
+
+msgid "Only mission owners can change EUD roles"
+msgstr ""
+
+msgid "Only mission owners can delete missions"
+msgstr ""
+
+msgid "Only one side connects"
+msgstr ""
+
+#, python-format
+msgid "Only the mission's owner can change mission %(mission_name)s"
+msgstr ""
+
+msgid "Only the stream's owner or an administrator can change it"
+msgstr ""
+
+msgid "Only the stream's owner or an administrator can delete it"
+msgstr ""
+
+msgid "Only the stream's owner or an administrator can delete this recording"
+msgstr ""
+
+msgid "Open Federation Hub in your C4 Raven and click \"Connect a server\"."
+msgstr ""
+
+msgid "Our CA certificate (save as federation-hub-ca.pem):"
+msgstr ""
+
+#, python-format
+msgid "Our CA: %(subject)s"
+msgstr ""
+
+#, python-format
+msgid "Our federation address: %(host)s, port %(port)s (v2)"
+msgstr ""
+
+msgid "Passwords do not match"
+msgstr ""
+
+msgid "Passwords should not include @ or : characters"
+msgstr ""
+
+#, python-format
+msgid "Path %(path)s not found"
+msgstr ""
+
+msgid "Path cannot begin with a slash"
+msgstr ""
+
+msgid "Please choose a file to upload"
+msgstr ""
+
+msgid "Please complete the human verification challenge"
+msgstr ""
+
+msgid "Please provide a UID"
+msgstr ""
+
+msgid "Please provide a data package hash"
+msgstr ""
+
+msgid "Please provide a dataFeedUid"
+msgstr ""
+
+msgid "Please provide a document ID"
+msgstr ""
+
+msgid "Please provide a file"
+msgstr ""
+
+msgid "Please provide a group name and direction"
+msgstr ""
+
+msgid "Please provide a hash and a list of groups"
+msgstr ""
+
+msgid "Please provide a latitude and longitude"
+msgstr ""
+
+msgid "Please provide a layer name of at most 255 characters"
+msgstr ""
+
+msgid "Please provide a list of groups, a username, and a direction"
+msgstr ""
+
+msgid "Please provide a list of users, group name, and direction"
+msgstr ""
+
+msgid "Please provide a mission name and creatorUid"
+msgstr ""
+
+msgid "Please provide a name"
+msgstr ""
+
+msgid "Please provide a username"
+msgstr ""
+
+msgid "Please provide a username and filter_name"
+msgstr ""
+
+msgid "Please provide at least one layer uid"
+msgstr ""
+
+msgid "Please provide the UID of the marker to delete"
+msgstr ""
+
+msgid "Please provide the URL of the channel to delete"
+msgstr ""
+
+msgid "Please provide the mission password"
+msgstr ""
+
+msgid "Please provide the password"
+msgstr ""
+
+msgid "Please provide the username and group name"
+msgstr ""
+
+msgid "Please provide the username, group name, and direction"
+msgstr ""
+
+msgid "Please select a CA certificate file"
+msgstr ""
+
+msgid "Please specify a callsign"
+msgstr ""
+
+msgid "Please specify a groupNameFilter"
+msgstr ""
+
+#, python-format
+msgid "Please specify a groupNameFilter that starts with %(prefix)s"
+msgstr ""
+
+msgid "Please specify a mission name"
+msgstr ""
+
+msgid "Please specify a path name"
+msgstr ""
+
+msgid "Please specify a username"
+msgstr ""
+
+msgid "Please specify a username and areas"
+msgstr ""
+
+msgid "Please specify a username and new password"
+msgstr ""
+
+msgid "Please specify a username and roles"
+msgstr ""
+
+msgid "Please specify a valid path"
+msgstr ""
+
+msgid "Please specify the preference_key"
+msgstr ""
+
+msgid "Please specify the username to activate"
+msgstr ""
+
+msgid "Please specify the username to deactivate"
+msgstr ""
+
+msgid "Please specify the username to grant access to"
+msgstr ""
+
+msgid "Please specify the username to revoke access from"
+msgstr ""
+
+#, python-format
+msgid "Plugin %(plugin_name)s not found"
+msgstr ""
+
+msgid "Plugins are disabled"
+msgstr ""
+
+msgid "Private data packages can't be installed on enrollment or connection"
+msgstr ""
+
+msgid "Profile not found"
+msgstr ""
+
+msgid ""
+"Raven doesn't send group names to the hub, so a group filter on data from"
+" Raven blocks everything"
+msgstr ""
+
+msgid ""
+"Raven doesn't test loopback, link-local, multicast or unspecified "
+"addresses"
+msgstr ""
+
+msgid "Recording not found"
+msgstr ""
+
+msgid ""
+"Remove the partner and connect it again (its certificate is kept if still"
+" trusted)"
+msgstr ""
+
+msgid "Remove this partner and connect it again with its CA file"
+msgstr ""
+
+msgid "Report file is too large"
+msgstr ""
+
+msgid "Report not found"
+msgstr ""
+
+#, python-format
+msgid "Role %(role)s does not exist"
+msgstr ""
+
+#, python-format
+msgid "SHA-256 fingerprint: %(fp)s"
+msgstr ""
+
+msgid "Send the changes as a JSON object"
+msgstr ""
+
+msgid "Send the host and port as JSON"
+msgstr ""
+
+msgid "Send the other admin the instructions so they connect to us"
+msgstr ""
+
+msgid ""
+"Send us /opt/tak/certs/files/ca.pem: the CA that issued your server "
+"certificate."
+msgstr ""
+
+msgid "Send us the CA that issued the certificate your server presents."
+msgstr ""
+
+#, python-format
+msgid ""
+"Serial %(serial)s is an old, short serial number shared by %(count)s "
+"certificates (%(holders)s). Revoking it revokes all of them. Send "
+"confirm_shared_serial to revoke them all anyway."
+msgstr ""
+
+msgid ""
+"Server connection data packages can't be installed on enrollment or "
+"connection"
+msgstr ""
+
+msgid "Server plugins must be zip, whl, or tar.gz files"
+msgstr ""
+
+msgid "Share \"Everything\" unless both sides use federated group mapping"
+msgstr ""
+
+msgid "Skipped because the address doesn't resolve"
+msgstr ""
+
+#, python-format
+msgid "Team not found: %(invitee)s"
+msgstr ""
+
+msgid "That CA isn't trusted by the hub yet"
+msgstr ""
+
+msgid "That address is too long"
+msgstr ""
+
+msgid "That certificate is damaged or uses a format the hub can't read"
+msgstr ""
+
+msgid "That device isn't blocked from enrolling"
+msgstr ""
+
+msgid ""
+"That file holds more than one certificate. Upload only the CA that issued"
+" the other server's certificate"
+msgstr ""
+
+msgid "That file isn't an X.509 certificate in PEM or DER format"
+msgstr ""
+
+msgid "That is this hub's own CA. Removing it would cut off every connection"
+msgstr ""
+
+msgid "That is this hub's own CA. Upload the other server's CA instead"
+msgstr ""
+
+msgid "That isn't a valid host name or IP address"
+msgstr ""
+
+msgid "That partner isn't in the active federation policy"
+msgstr ""
+
+msgid ""
+"That server is already connected to us, so we mustn't connect to it as "
+"well. Choose \"They connect to us\""
+msgstr ""
+
+#, python-format
+msgid "The %(field)s setting is invalid"
+msgstr ""
+
+#, python-format
+msgid "The %(field)s setting isn't valid JSON"
+msgstr ""
+
+msgid "The CA certificate file is larger than 1 MB"
+msgstr ""
+
+#, python-format
+msgid ""
+"The Remote Clear plugin APK has not been uploaded yet. Build and TAK-sign"
+" it (see the plugin BUILD.md), then place it at %(path)s."
+msgstr ""
+
+msgid "The __ANON__ group cannot be deleted"
+msgstr ""
+
+msgid "The active attribute must be true or false"
+msgstr ""
+
+#, python-format
+msgid ""
+"The active policy still uses this CA (%(names)s). Remove those partners "
+"or nodes first"
+msgstr ""
+
+msgid "The address can't contain spaces"
+msgstr ""
+
+msgid ""
+"The bridge isn't running, so it can't restart itself. On the server, run:"
+" sudo systemctl restart fedhub_bridge"
+msgstr ""
+
+msgid "The channel set has no channels"
+msgstr ""
+
+msgid "The expiry must be a time in milliseconds, or -1"
+msgstr ""
+
+msgid "The expiry must be in the future"
+msgstr ""
+
+msgid "The hash parameter does not match the uploaded file"
+msgstr ""
+
+msgid "The hub no longer trusts this CA"
+msgstr ""
+
+msgid "The map is turned off on this server"
+msgstr ""
+
+#, python-format
+msgid "The name can be at most %(n)s characters"
+msgstr ""
+
+msgid "The name can't contain control characters"
+msgstr ""
+
+msgid ""
+"The partner's certificate isn't in the active policy, so the hub refuses "
+"its connections"
+msgstr ""
+
+msgid "The policy has no graph"
+msgstr ""
+
+msgid "The policy needs a name"
+msgstr ""
+
+msgid "The port must be a number from 1 to 65535"
+msgstr ""
+
+msgid "The profile name is too long to copy"
+msgstr ""
+
+#, python-format
+msgid "The server was removed, but its CA couldn't be: %(error)s"
+msgstr ""
+
+msgid ""
+"The server was removed, but its CA was kept because the stored policies "
+"couldn't be checked"
+msgstr ""
+
+msgid ""
+"The server was removed. Its CA was kept because the active policy still "
+"uses it"
+msgstr ""
+
+#, python-format
+msgid ""
+"The server was removed. Its CA was kept because the outgoing connection "
+"%(names)s may need it to verify the other side; remove it under Advanced "
+"> Certificates if you're sure it doesn't"
+msgstr ""
+
+#, python-format
+msgid ""
+"The server was removed. Its CA was kept because the policy %(names)s "
+"still uses it"
+msgstr ""
+
+msgid "Their CA certificate is trusted"
+msgstr ""
+
+#, python-format
+msgid "Their CA expires in %(days)s days"
+msgstr ""
+
+msgid "Their CA has expired"
+msgstr ""
+
+msgid "Their CA is in the active policy"
+msgstr ""
+
+msgid "Their CA isn't about to expire"
+msgstr ""
+
+msgid "Their address resolves"
+msgstr ""
+
+msgid "Their port is reachable"
+msgstr ""
+
+msgid "They connect to us"
+msgstr ""
+
+msgid "This account does not have access to the web interface"
+msgstr ""
+
+msgid "This certificate is already revoked"
+msgstr ""
+
+msgid ""
+"This certificate was issued before serial numbers were recorded and its "
+"file has since been replaced, so it can't be revoked individually. Have "
+"the user enroll again, then revoke by serial number if you have it."
+msgstr ""
+
+msgid "This client certificate has been revoked"
+msgstr ""
+
+msgid ""
+"This connection comes from a shared group's Access list, not a direct "
+"connection -- remove one of them from that group instead"
+msgstr ""
+
+msgid ""
+"This connection has no trusted CA of its own, so it can only be removed, "
+"not switched"
+msgstr ""
+
+msgid "This connection isn't linked to a trusted CA, so Raven can't tell"
+msgstr ""
+
+msgid "This data package has already been uploaded"
+msgstr ""
+
+msgid "This data package is limited to groups you aren't in"
+msgstr ""
+
+msgid "This data package is private to its sender and recipients"
+msgstr ""
+
+#, python-format
+msgid ""
+"This group is managed by the user visibility diagram -- disconnect the "
+"users there instead of %(action)s here"
+msgstr ""
+
+msgid ""
+"This group is managed by the user visibility diagram -- disconnect the "
+"users there instead of deleting it directly"
+msgstr ""
+
+msgid ""
+"This group is managed by the user visibility diagram -- disconnect the "
+"users there instead of removing one side of it here"
+msgstr ""
+
+#, python-format
+msgid "This hub already connects to %(host)s:%(port)s"
+msgstr ""
+
+msgid ""
+"This hub dials out to another hub while a hub this partner trusts also "
+"dials in; if they're the same partner the hub drops one of the two "
+"connections over and over"
+msgstr ""
+
+msgid "This is a test"
+msgstr ""
+
+msgid "This partner is disabled, so the hub refuses its connections"
+msgstr ""
+
+msgid ""
+"This policy doesn't include this hub's own CA (or it's disabled), so "
+"Raven's own connection to the hub would be refused once it's active. Use "
+"Repair after activating, or fix the policy first"
+msgstr ""
+
+msgid ""
+"This policy doesn't include this hub's own CA, so Raven's own connection "
+"to the hub would be refused once it's active. Add it, or apply anyway"
+msgstr ""
+
+msgid "This user has no enrolled devices"
+msgstr ""
+
+#, python-format
+msgid ""
+"Trust our CA (attached) in your federation trust store. Fingerprint: "
+"%(fp)s."
+msgstr ""
+
+msgid ""
+"Two-factor authentication isn't set up on your account -- set it up under"
+" your profile first"
+msgstr ""
+
+msgid "UDP Server"
+msgstr ""
+
+#, python-format
+msgid "UID %(uid)s not found"
+msgstr ""
+
+msgid ""
+"Under \"Who connects\", choose \"They connect to us\": we connect to you,"
+" so add nothing outgoing on your side. Make sure your port 9102 is "
+"reachable from us."
+msgstr ""
+
+#, python-format
+msgid ""
+"Under \"Who connects\", choose \"We connect to them\" and enter "
+"%(where)s. We won't connect to you."
+msgstr ""
+
+#, python-format
+msgid ""
+"Under Active Connections, open Manage Groups for the %(name)s federate "
+"and choose the inbound and outbound groups (for example __ANON__ or your "
+"federation group). Nothing is shared until you do."
+msgstr ""
+
+#, python-format
+msgid ""
+"Under Manage Federate Certificate Authorities, upload our CA (attached). "
+"Its fingerprint is %(fp)s."
+msgstr ""
+
+msgid "Unknown UID"
+msgstr ""
+
+#, python-format
+msgid "Unknown UID: %(uid)s"
+msgstr ""
+
+#, python-format
+msgid "Unknown admin area: %(area)s"
+msgstr ""
+
+#, python-format
+msgid "Unknown data type: %(key)s"
+msgstr ""
+
+#, python-format
+msgid "Unknown group filter for %(field)s"
+msgstr ""
+
+#, python-format
+msgid "Unknown preference_key: %(preference_key)s"
+msgstr ""
+
+msgid "Unknown server type"
+msgstr ""
+
+msgid "Unknown user certificate"
+msgstr ""
+
+msgid "Use the partner's real address, not a loopback or link-local one"
+msgstr ""
+
+#, python-format
+msgid "User %(username)s already exists"
+msgstr ""
+
+#, python-format
+msgid "User %(username)s does not exist"
+msgstr ""
+
+#, python-format
+msgid "User %(username)s does not own EUD %(uid)s"
+msgstr ""
+
+#, python-format
+msgid "User %(username)s doesn't exist"
+msgstr ""
+
+#, python-format
+msgid "User %(username)s not found"
+msgstr ""
+
+msgid "User not found"
+msgstr ""
+
+#, python-format
+msgid "Valid for %(days)s more days"
+msgstr ""
+
+msgid "Video not found"
+msgstr ""
+
+#, python-format
+msgid "Video stream with uid %(uid)s not found"
+msgstr ""
+
+msgid "Wait a few seconds; the hub retries every 5 seconds"
+msgstr ""
+
+msgid "We connect to them"
+msgstr ""
+
+msgid ""
+"We connect to them and they also connect to us; the hub drops one of the "
+"two connections over and over"
+msgstr ""
+
+msgid "We don't connect to this partner, so it has no address to change"
+msgstr ""
+
+msgid "We receive data from them"
+msgstr ""
+
+msgid "We share data with them"
+msgstr ""
+
+msgid "You are not subscribed to this mission"
+msgstr ""
+
+msgid "You can only delete your own data packages"
+msgstr ""
+
+msgid "You can't change your own role"
+msgstr ""
+
+msgid "You can't deactivate your own account"
+msgstr ""
+
+msgid "You can't delete your own account"
+msgstr ""
+
+msgid "You can't revoke your own website access"
+msgstr ""
+
+msgid "You do not have permission to change this mission's password"
+msgstr ""
+
+msgid "You may only generate a certificate for yourself"
+msgstr ""
+
+msgid "You may only view your own certificate validity"
+msgstr ""
+
+#, python-format
+msgid "Your mission role does not have the %(permission)s permission"
+msgstr ""
+
+#, python-format
+msgid "Your password must be at least %(characters)s characters long"
+msgstr ""
+
+msgid "access must be both, IN or OUT"
+msgstr ""
+
+msgid "activate the policy"
+msgstr ""
+
+msgid "add the CA certificate"
+msgstr ""
+
+msgid "changing it"
+msgstr ""
+
+msgid "clientUid not found"
+msgstr ""
+
+msgid "default_access must be both, IN or OUT"
+msgstr ""
+
+#, python-format
+msgid ""
+"default_membership_days must be a whole number of days from 1 to %(max)s,"
+" or empty for no expiry"
+msgstr ""
+
+msgid "disconnect the connection"
+msgstr ""
+
+msgid "expires_at must be an ISO 8601 date and time"
+msgstr ""
+
+msgid "export the policy"
+msgstr ""
+
+msgid "groupNameFilter must end with either _READ or _WRITE"
+msgstr ""
+
+msgid "invitation found without type or invitee attribute"
+msgstr ""
+
+msgid "list connections"
+msgstr ""
+
+msgid "list its CA certificates"
+msgstr ""
+
+msgid "list known groups"
+msgstr ""
+
+msgid "list policies"
+msgstr ""
+
+msgid "read the active policy"
+msgstr ""
+
+msgid "read the policy"
+msgstr ""
+
+msgid "remove the CA certificate"
+msgstr ""
+
+msgid "rename the CA certificate"
+msgstr ""
+
+msgid "report its configuration"
+msgstr ""
+
+msgid "report metrics"
+msgstr ""
+
+msgid "report.xml not found"
+msgstr ""
+
+msgid "save the policy"
+msgstr ""
+
+msgid "send its CA certificate"
+msgstr ""
+
+msgid "source and target are required"
+msgstr ""
+
+msgid "source, target, and a valid type (solid or dotted) are required"
+msgstr ""
+
+msgid "this hub"
+msgstr ""
+
+msgid "users must be a list of usernames"
+msgstr ""
+
+msgid "what to receive"
+msgstr ""
+
+msgid "what to share"
+msgstr ""
+

@@ -1,0 +1,77 @@
+/* Marker icons: Leaflet's divIcon draws a white box with a border by default. */
+.bareIcon {
+    background: none;
+    border: none;
+}
+
+/* Leaflet chrome: square, flat, hairline borders (see DESIGN.md). Controls keep
+   a light surface in both themes because Leaflet's layer and fullscreen icons
+   are dark sprites drawn over light map tiles. `.map` sits on the
+   .leaflet-container element; the doubled class out-ranks leaflet.css's
+   `.leaflet-touch …` rules regardless of stylesheet order. */
+.map {
+    font-family: inherit;
+}
+
+/* Cancel the AppShell's content padding and take the full height below the
+   header, so the map fills the page (square: it meets the shell's edges). */
+.fill {
+    margin: calc(var(--mantine-spacing-lg) * -1);
+    height: calc(100dvh - var(--app-shell-header-height, 52px));
+}
+
+.map.map :global(.leaflet-bar),
+.map.map :global(.leaflet-control-layers) {
+    border: 1px solid #d1d1d1;
+    border-radius: var(--mantine-radius-sm);
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.map.map :global(.leaflet-bar a),
+.map.map :global(.leaflet-bar a:first-child),
+.map.map :global(.leaflet-bar a:last-child) {
+    border-radius: 0;
+    color: #1b1b1b;
+    border-bottom-color: #e5e5e5;
+    transition: background-color var(--raven-transition);
+}
+
+.map.map :global(.leaflet-bar a:hover) {
+    background-color: #f0f0f0;
+}
+
+.map.map :global(.leaflet-control-layers-expanded) {
+    color: #1b1b1b;
+    padding: 6px 10px;
+}
+
+.map.map :global(.leaflet-control-layers-separator) {
+    border-top-color: #e5e5e5;
+}
+
+.map.map :global(.leaflet-tooltip) {
+    border-radius: var(--mantine-radius-sm);
+    box-shadow: none;
+}
+
+.map.map :global(.leaflet-popup-content-wrapper) {
+    border-radius: var(--mantine-radius-md);
+    box-shadow: none;
+}
+
+.map.map :global(.leaflet-popup-tip) {
+    box-shadow: none;
+}
+
+.map.map :global(.leaflet-tooltip) {
+    border-color: #d1d1d1;
+}
+
+/* Map names (permanent Leaflet tooltips): compact, so a busy map stays readable. */
+.label {
+    padding: 0 4px;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 600;
+}

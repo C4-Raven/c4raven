@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customMapSource>
+  <name>Stamen Watercolor</name>
+  <minZoom>1</minZoom>
+  <maxZoom>16</maxZoom>
+  <tileType>jpg</tileType>
+  <tileUpdate>None</tileUpdate>
+  <backgroundColor>#000000</backgroundColor>
+  <url>https://tiles.stadiamaps.com/tiles/stamen_watercolor/{$z}/{$x}/{$y}.jpg</url>
+</customMapSource>

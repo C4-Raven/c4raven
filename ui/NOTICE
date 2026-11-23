@@ -1,0 +1,39 @@
+Raven UI
+Copyright (C) 2026 C4 Raven
+
+This program is derived from OpenTAKServer-UI
+  Copyright (C) 2023-2026 Brian Wallen and OpenTAKServer contributors
+  https://github.com/brian7704/OpenTAKServer-UI
+  Licensed under the GNU General Public License v3.0
+
+C4 Raven forked the original work in August 2026 and has substantially
+modified and extended it since, including rewriting and renaming its
+components. These modifications are also licensed under GPL-3.0-or-later.
+See LICENSE for the full text.
+
+ORIGINAL C4 RAVEN WORK
+These parts were written by C4 Raven and contain no OpenTAKServer-UI code.
+They are C4 Raven's copyright and are licensed under GPL-3.0-or-later
+as part of this program:
+
+  src/pages/FederationHub/          Federation Hub pages
+  src/pages/DeviceProfiles/         device profiles (except index.tsx and
+                                    its CSS module)
+  src/pages/ServerRequests/         server requests (except ScheduledJobsTab.tsx)
+  src/pages/MissionDetail.tsx, src/pages/Dashboard/MessageTraffic.tsx,
+  src/pages/Dashboard/serverStatus.ts
+  src/pages/MeshtasticGate.tsx, src/pages/MeshtasticOffNotice.tsx,
+  src/pages/Map/{MapGate,MapDisplayControl}.tsx, src/pages/Map/mapDisplay.ts,
+  src/features.ts, src/lazyPage.ts  optional features
+  src/adminAccess.ts, src/components/{AdminAreasModal,AdminOnlyNotice,
+  ReadOnlyNotice}.tsx               read-only admin role
+  src/components/{ItemGroups,UserVisibilityDiagram,FederationPolicyDiagram,
+  UserCertificatesModal,VpnQrPanel,AboutModal}.tsx, src/pages/eudFederation.ts
+  src/components/ui/, src/global.css, src/pages/pageUtils.tsx
+                                    Raven UI component kit and styling
+  docs/, README.md, DESIGN.md, the Raven logo, and the tests C4 Raven wrote
+
+Everything else in src/ is derived from OpenTAKServer-UI.
+
+The TAK logo (src/images/tak_logo.png) belongs to the TAK Product Center
+and is shown only to identify the tak.gov sign-in it links to.

@@ -1,0 +1,50 @@
+/* Server administration pages. See DESIGN.md. */
+
+/* Raven UI tab strip: flat, square, accent underline on the selected tab. */
+.tabList {
+    --tab-border-color: var(--raven-border);
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 10px 14px;
+    color: var(--raven-text-muted);
+    transition:
+        background-color var(--raven-transition),
+        color var(--raven-transition);
+
+    &:hover {
+        background-color: var(--raven-hover);
+        border-color: transparent;
+        color: var(--mantine-color-text);
+    }
+
+    &[data-active] {
+        border-color: var(--raven-accent);
+        color: var(--mantine-color-text);
+        font-weight: 600;
+    }
+
+    &[data-active] :global(.mantine-Tabs-tabSection) {
+        color: var(--raven-accent);
+    }
+}
+
+/* Rows stacked inside one Panel, separated by hairlines. */
+.row {
+    padding: var(--mantine-spacing-md);
+
+    & + & {
+        border-top: 1px solid var(--raven-border);
+    }
+}
+
+/* Error log row: a 3px severity bar on the left edge. */
+.logRow {
+    border-left: 3px solid var(--level-color);
+}
+
+.emptyIcon svg {
+    width: 28px;
+    height: 28px;
+}

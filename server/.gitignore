@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Test, lint and type-check output
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Secrets and per-install config: never commit, never ship in a build
+# (build-offline.sh runs `git clean -X` before building the wheel)
+raven/secret_key.py
+config.yml
+.env
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.bks

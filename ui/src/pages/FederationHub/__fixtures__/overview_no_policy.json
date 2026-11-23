@@ -1,0 +1,27 @@
+{
+  "bridge": {
+    "enabled": true,
+    "service_state": "active"
+  },
+  "hub": {
+    "active_policy": null,
+    "broker_id": "broker-1",
+    "host": "tak.example.net",
+    "reachable": true,
+    "v2_port": 9102
+  },
+  "own": {
+    "connected": false,
+    "nickname": "Pubserver",
+    "sha256": "57cd78a685b5657fc2dd53f6b51d8b03c6eeeb03a886ee05f27ab389f4984e3e",
+    "subject": "CN=C4Raven-FedHub-CA,OU=C4Raven-FedHub,O=ZZ,C=US",
+    "uid": "CN=C4Raven-FedHub-CA,OU=C4Raven-FedHub,O=ZZ,C=US-57cd78a685b5657fc2dd53f6b51d8b03c6eeeb03a886ee05f27ab389f4984e3e"
+  },
+  "partners": [],
+  "problems": [
+    "no_active_policy",
+    "own_ca_missing",
+    "bridge_not_connected"
+  ],
+  "unattributed_connections": []
+}

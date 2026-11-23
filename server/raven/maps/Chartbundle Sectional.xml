@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customMapSource>
+  <name>Chartbundle Sectional</name>
+  <minZoom>4</minZoom>
+  <maxZoom>12</maxZoom>
+  <tileType>png</tileType>
+  <tileUpdate>None</tileUpdate>
+  <backgroundColor>#000000</backgroundColor>
+  <url>https://wms.chartbundle.com/tms/v1.0/sec/{$z}/{$x}/{$y}.png?type=google</url>
+</customMapSource>

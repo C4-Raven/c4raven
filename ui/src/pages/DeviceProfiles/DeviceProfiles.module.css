@@ -1,0 +1,132 @@
+/* Device Profiles: flat, square, one surface level. See DESIGN.md. */
+
+/* Wizard steps: a flat row of tabs with an accent bar under the current one. */
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--raven-border);
+    margin-bottom: var(--mantine-spacing-lg);
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 12px 12px;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    text-align: left;
+    color: inherit;
+    transition: background-color var(--raven-transition);
+}
+
+.step:hover {
+    background-color: var(--raven-hover);
+}
+
+.step[aria-current='step'] {
+    border-bottom-color: var(--raven-accent);
+}
+
+.stepNumber {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: var(--mantine-font-size-xs);
+    font-weight: 600;
+    border: 1px solid var(--raven-border-strong);
+    border-radius: var(--mantine-radius-sm);
+    color: var(--raven-text-muted);
+}
+
+.step[aria-current='step'] .stepNumber,
+.step[data-done] .stepNumber {
+    border-color: var(--raven-accent);
+    background-color: var(--raven-accent);
+    color: var(--mantine-primary-color-contrast);
+}
+
+.step[data-error] .stepNumber {
+    border-color: var(--mantine-color-red-6);
+    background-color: transparent;
+    color: var(--mantine-color-red-6);
+}
+
+.stepNumber svg {
+    width: 16px;
+    height: 16px;
+}
+
+.stepLabel {
+    font-size: var(--mantine-font-size-sm);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.stepDescription {
+    font-size: var(--mantine-font-size-xs);
+    color: var(--raven-text-muted);
+    line-height: 1.3;
+}
+
+/* A list of rows separated by hairlines (no box per row). */
+.rows {
+    border-top: 1px solid var(--raven-border);
+}
+
+.rows > * {
+    padding: var(--mantine-spacing-sm) 0;
+    border-bottom: 1px solid var(--raven-border);
+}
+
+/* Small icon next to text. */
+.icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    color: var(--raven-text-muted);
+}
+
+.icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.accentIcon {
+    display: inline-flex;
+    flex-shrink: 0;
+    color: var(--raven-accent);
+}
+
+/* Tiny icons inside badges. */
+.badgeIcon {
+    display: inline-flex;
+}
+
+.badgeIcon svg {
+    width: 12px;
+    height: 12px;
+}
+
+.mono {
+    word-break: break-all;
+}
+
+/* Three explanation columns inside one Panel, split by hairlines. */
+.howItWorks > * + * {
+    border-left: 1px solid var(--raven-border);
+    padding-left: var(--mantine-spacing-md);
+}
+
+@media (max-width: 47.99em) {
+    .howItWorks > * + * {
+        border-left: 0;
+        padding-left: 0;
+        border-top: 1px solid var(--raven-border);
+        padding-top: var(--mantine-spacing-md);
+    }
+}

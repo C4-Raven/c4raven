@@ -1,0 +1,35 @@
+/* Raven UI sign-in: one rounded (8px) card centred on the page background,
+   logo and heading centred above a single-column form. */
+.page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 16px 40px;
+    background: var(--raven-bg);
+}
+
+.themeToggle {
+    position: absolute;
+    top: var(--mantine-spacing-md);
+    right: var(--mantine-spacing-md);
+}
+
+.panel {
+    width: 100%;
+    max-width: 420px;
+    /* !important: beats the Panel component's default inline padding. */
+    padding: 36px 40px 32px !important;
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        padding: 28px 20px 24px !important;
+    }
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
